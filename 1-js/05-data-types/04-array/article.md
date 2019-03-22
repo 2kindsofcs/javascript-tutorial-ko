@@ -1,12 +1,19 @@
 # Arrays 
+# 객체
 
 Objects allow you to store keyed collections of values. That's fine.
+우리는 객체를 이용하여 key가 있는 값의 컬렉션을 저장할 수 있습니다. 나무랄 데가 없지요.
 
 But quite often we find that we need an *ordered collection*, where we have a 1st, a 2nd, a 3rd element and so on. For example, we need that to store a list of something: users, goods, HTML elements etc. 
+하지만 우리는 꽤 자주 *정렬된 컬렉션*이 필요합니다. 첫 번째, 두 번째, 세 번째 요소 등이 있는 컬렉션 말이지요.
+예를 들자면 유저, 상품, HTML 엘리먼트 등의 리스트를 저장하는 경우에 해당합니다.  
 
 It is not convenient to use an object here, because it provides no methods to manage the order of elements. We can’t insert a new property “between” the existing ones. Objects are just not meant for such use.
+그럴 때 객체를 쓰는 건 불편합니다. 왜냐하면 객체는 요소의 순서를 처리하는 메소드를 제공하지 않기 때문입니다.
+우리는 이미 존재하는 프로퍼티 "사이"에 새로운 프로퍼티를 삽입할 수 없습니다. 객체는 그런 용도로 만들어진 것이 아닙니다. 
 
 There exists a special data structure named `Array`, to store ordered collections. 
+정렬된 컬렉션을 저장하기 위한 `배열`이라는 특별한 자료 구조가 있습니다. 
 
 ## Declaration
 
