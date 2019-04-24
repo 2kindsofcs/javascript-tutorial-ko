@@ -18,6 +18,7 @@ There exists a special data structure named `Array`, to store ordered collection
 ## Declaration
 
 There are two syntaxes for creating an empty array:
+빈 배열을 만드는 방법은 두 가지가 있습니다. 
 
 ```js
 let arr = new Array();
@@ -25,14 +26,17 @@ let arr = [];
 ```
 
 Almost all the time, the second syntax is used. We can supply initial elements in the brackets:
+거의 모든 경우에 두 번째 방법이 사용됩니다. 각괄호 안에 요소들을 넣어 선언할 수도 있습니다.
 
 ```js
 let fruits = ["Apple", "Orange", "Plum"];
 ```
 
 Array elements are numbered, starting with zero.
+배열 요소들은 0부터 순서가 매겨집니다.
 
 We can get an element by its number in square brackets:
+각괄호 안에 요소의 순서를 넣어 요소의 값을 얻을 수 있습니다.
 
 ```js run
 let fruits = ["Apple", "Orange", "Plum"];
@@ -43,18 +47,21 @@ alert( fruits[2] ); // Plum
 ```
 
 We can replace an element:
+요소를 교체할 수도 있습니다.
 
 ```js
 fruits[2] = 'Pear'; // now ["Apple", "Orange", "Pear"]
 ```
 
 ...Or add a new one to the array:
+또는 배열에 새 요소를 추가할 수도 있습니다.
 
 ```js
 fruits[3] = 'Lemon'; // now ["Apple", "Orange", "Pear", "Lemon"]
 ```
 
 The total count of the elements in the array is its `length`:
+배열에 들어있는 요소의 총 개수는 요소의 `length`입니다.
 
 ```js run
 let fruits = ["Apple", "Orange", "Plum"];
@@ -63,6 +70,7 @@ alert( fruits.length ); // 3
 ```
 
 We can also use `alert` to show the whole array.
+또한 `alert`를 사용해 전체 배열을 볼 수 있습니다. 
 
 ```js run
 let fruits = ["Apple", "Orange", "Plum"];
@@ -71,8 +79,10 @@ alert( fruits ); // Apple,Orange,Plum
 ```
 
 An array can store elements of any type.
+하나의 배열에 어떤 종류의 요소라도 저장할 수 있습니다.
 
 For instance:
+예를 들면 아래와 같습니다:
 
 ```js run no-beautify
 // mix of values
@@ -88,6 +98,7 @@ arr[3](); // hello
 
 ````smart header="Trailing comma"
 An array, just like an object, may end with a comma:
+배열은 객체와 마찬가지로 마지막 요소 끝에 콤마를 붙여줄 수 있습니다.   
 ```js 
 let fruits = [
   "Apple", 
@@ -97,56 +108,77 @@ let fruits = [
 ```
 
 The "trailing comma" style makes it easier to insert/remove items, because all lines become alike.
+트레일링 콤마 스타일은 가시성을 높여 아이템 추가 혹은 삭제를 더욱 편리하게 해줍니다. 
 ````
 
 
 ## Methods pop/push, shift/unshift
 
 A [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) is one of most common uses of an array. In computer science, this means an ordered collection of elements which supports two operations:
+[큐](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))는 배열의 가장 흔한 쓰임새 중 하나입니다. 컴퓨터 과학에서 큐는 다음과 같은 두 개의 동작이 가능한 순서가 있는 요소들의 컬렉션입니다. 
 
 - `push` appends an element to the end.
+- `push` 끝에 요소를 추가합니다.
 - `shift` get an element from the beginning, advancing the queue, so that the 2nd element becomes the 1st.
+- `shift` 맨 앞에 있는 요소를 가져오고, 2번째 요소가 1번째 요소가 되도록 합니다.
+
 
 ![](queue.png)
 
 Arrays support both operations.
+배열은 두 가지 동작이 모두 가능합니다.
 
 In practice we meet it very often. For example, a queue of messages that need to be shown on-screen.
+연습문제에서 우리는 큐를 자주 보게 될 것입니다. 예를 들어 스크린에 보여져야 할 메세지의 큐 같은 것 말입니다. 
 
 There's another use case for arrays -- the data structure named [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)). 
+배열의 또다른 활용 예시도 있습니다. [스택](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))이라는 자료구조입니다. 
+
 
 It supports two operations:
+스택은 두 가지 동작이 가능합니다. 
 
 - `push` adds an element to the end.
+- `push`는 끝에 요소를 추가합니다. 
 - `pop` takes an element from the end.
+- `pop`은 끝에서 요소를 꺼내옵니다. 
 
 So new elements are added or taken always from the "end".
+즉 새로운 요소들은 항상 "끝"에 추가되며, 기존 요소들은 항상 "끝"에서 꺼내집니다.
 
 A stack is usually illustrated as a pack of cards: new cards are added to the top or taken from the top:
+스택은 보통 카드뭉치로 비유됩니다: 새로운 카드들은 위쪽에 올리고, 기존 카드들은 위에서부터 가져옵니다.
 
 ![](stack.png)
 
 For stacks, the latest pushed item is received first, that's also called LIFO (Last-In-First-Out) principle. For queues, we have FIFO (First-In-First-Out).
+스택에서는 가장 최근에 추가된 요소를 먼저 받습니다. 이는 LIFO (후입선출, Last-In-First-Out)라고도 합니다. 
+큐의 경우는 FIFO(선입선출, First-In-First-Out)이라고 합니다. 
 
 Arrays in JavaScript can work both as a queue and as a stack. They allow you to add/remove elements both to/from the beginning or the end. 
+자바스크립트의 배열은 스택으로도, 큐로도 작동할 수 있습니다. 가장 처음 혹은 맨 끝에서 요소를 추가/삭제하는 것이 가능하기 때문입니다. 
 
 In computer science the data structure that allows it is called [deque](https://en.wikipedia.org/wiki/Double-ended_queue).
+컴퓨터 과학에서 그러한 동작이 가능한 자료구조를 [deque](https://en.wikipedia.org/wiki/Double-ended_queue)라고 합니다. 
 
 **Methods that work with the end of the array:**
+**배열의 끝에서 동작하는 메소드들**
 
 `pop`
 : Extracts the last element of the array and returns it:
+: 배열의 마지막 요소를 추출하여 리턴합니다:
 
     ```js run
     let fruits = ["Apple", "Orange", "Pear"];
 
-    alert( fruits.pop() ); // remove "Pear" and alert it
+    alert( fruits.pop() ); // remove "Pear" and alert it "Pear"을 삭제하고 alert합니다. 
 
     alert( fruits ); // Apple, Orange
     ```
 
 `push`
 : Append the element to the end of the array:
+: 배열의 끝에 요소를 추가합니다:
 
     ```js run
     let fruits = ["Apple", "Orange"];
@@ -157,22 +189,26 @@ In computer science the data structure that allows it is called [deque](https://
     ```
 
     The call `fruits.push(...)` is equal to `fruits[fruits.length] = ...`.
+    `fruits.push(...)`와 `fruits[fruits.length] = ...`의 결과는 동일합니다.
 
 **Methods that work with the beginning of the array:**
+**배열의 시작 부분에서 작동하는 메소드들**
 
 `shift`
 : Extracts the first element of the array and returns it:
+: 배열의 가장 처음 요소를 빼낸 뒤 리턴합니다:
 
     ```js
     let fruits = ["Apple", "Orange", "Pear"];
 
-    alert( fruits.shift() ); // remove Apple and alert it
+    alert( fruits.shift() ); // Apple을 제거한 뒤 alert합니다 
 
     alert( fruits ); // Orange, Pear
     ```
 
 `unshift`
 : Add the element to the beginning of the array:
+: 배열의 시작 부분에 요소를 추가합니다:
 
     ```js
     let fruits = ["Orange", "Pear"];
@@ -183,6 +219,7 @@ In computer science the data structure that allows it is called [deque](https://
     ```
 
 Methods `push` and `unshift` can add multiple elements at once:
+`push`와 `unshift` 메소드는 여러 개의 요소를 한번에 더할 수 있습니다:
 
 ```js run
 let fruits = ["Apple"];
@@ -195,28 +232,34 @@ alert( fruits );
 ```
 
 ## Internals
+## 인터널
 
 An array is a special kind of object. The square brackets used to access a property `arr[0]` actually come from the object syntax. Numbers are used as keys. 
+배열은 특별한 종류의 객체입니다. 요소값에 접근하기 위한 각괄호는 객체 문법에서 유래한 것입니다. 숫자가 key로 사용되지요. 
 
 They extend objects providing special methods to work with ordered collections of data and also the `length` property. But at the core it's still an object.
+순서가 있는 데이터 컬렉션을 다루기 위한 특별한 메소드들과 `lenght` 프로퍼티를 사용할 수 있지만, 본질적으로 배열은 객체입니다. 
 
 Remember, there are only 7 basic types in JavaScript. Array is an object and thus behaves like an object. 
+자바스크립트에는 7개의 기본 타입이 있다는 것을 기억하세요. 배열은 객체이며 따라서 객체처럼 행동합니다. 
 
 For instance, it is copied by reference:
+예를 들어, 배열은 by reference로 복사됩니다:
 
 ```js run
 let fruits = ["Banana"]
 
-let arr = fruits; // copy by reference (two variables reference the same array)
+let arr = fruits; // copy by reference (두 변수가 동일한 배열을 참조)
 
 alert( arr === fruits ); // true
  
-arr.push("Pear"); // modify the array by reference
+arr.push("Pear"); // by reference로 배열을 수정
 
-alert( fruits ); // Banana, Pear - 2 items now
+alert( fruits ); // Banana, Pear - 이제 요소가 2개입니다. 
 ```
 
 ...But what makes arrays really  special is their internal representation. The engine tries to store its elements in the contiguous memory area, one after another, just as depicted on the illustrations in this chapter, and there are other optimizations as well, to make arrays work really fast.
+...하지만 배열을 정말 특별하게 만드는 것은 인터널 표현입니다.(?)  이 챕터의 그림들에서 배열의 요소들이 순차적으로 나열된 모습으로 묘사되었듯이, 엔진은 배열의 요소들을 메모리 상에 연속적으로 저장하려고 시도합니다. 물론 배열이 매우 빨리 작동하게끔 하는 다른 최적화들도 있습니다.
 
 But they all break if we quit working with an array as with an "ordered collection" and start working with it as if it were a regular object.
 
