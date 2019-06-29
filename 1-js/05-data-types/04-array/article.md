@@ -2,18 +2,18 @@
 # 객체
 
 Objects allow you to store keyed collections of values. That's fine.
-우리는 객체를 이용하여 key가 있는 값의 컬렉션을 저장할 수 있습니다. 나무랄 데가 없지요.
+객체를 이용하면 key가 있는 값들의 모음을 저장할 수 있습니다.
 
 But quite often we find that we need an *ordered collection*, where we have a 1st, a 2nd, a 3rd element and so on. For example, we need that to store a list of something: users, goods, HTML elements etc. 
-하지만 우리는 꽤 자주 *정렬된 컬렉션*이 필요합니다. 첫 번째, 두 번째, 세 번째 요소 등이 있는 컬렉션 말이지요.
-예를 들자면 유저, 상품, HTML 엘리먼트 등의 리스트를 저장하는 경우에 해당합니다.  
+하지만 첫 번째, 두 번째, 세 번째 요소 등 요소에 *순서가 있는 모음*이 필요할 때가 꽤 많습니다. 예를 들어 유저, 상품, HTML 요소 등의 목록을 저장하려면 순서가 있는 모음이 필요합니다. 
 
 It is not convenient to use an object here, because it provides no methods to manage the order of elements. We can’t insert a new property “between” the existing ones. Objects are just not meant for such use.
-그럴 때 객체를 쓰는 건 불편합니다. 왜냐하면 객체는 요소의 순서를 처리하는 메소드를 제공하지 않기 때문입니다.
-우리는 이미 존재하는 프로퍼티 "사이"에 새로운 프로퍼티를 삽입할 수 없습니다. 객체는 그런 용도로 만들어진 것이 아닙니다. 
+이럴 때 객체를 쓰는 건 불편합니다. 왜냐하면 객체에는 요소의 순서를 조작할 수 있는 메서드가 없기 때문입니다.
+이미 존재하는 프로퍼티 "사이"에 새로운 프로퍼티를 삽입할 수는 없습니다. 애초에 객체는 그런 용도가 아닙니다.  
 
 There exists a special data structure named `Array`, to store ordered collections. 
-정렬된 컬렉션을 저장하기 위한 `배열`이라는 특별한 자료 구조가 있습니다. 
+`배열`은 순서가 있는 모음을 저장하기 위한 특별한 자료 구조입니다. 
+
 
 ## Declaration
 
@@ -26,17 +26,17 @@ let arr = [];
 ```
 
 Almost all the time, the second syntax is used. We can supply initial elements in the brackets:
-거의 모든 경우에 두 번째 방법이 사용됩니다. 각괄호 안에 요소들을 넣어 선언할 수도 있습니다.
+대부분 두 번째 방법을 사용합니다. 각괄호 안에 요소들을 넣어 선언할 수도 있습니다.
 
 ```js
 let fruits = ["Apple", "Orange", "Plum"];
 ```
 
 Array elements are numbered, starting with zero.
-배열 요소들은 0부터 순서가 매겨집니다.
+배열 요소의 순서는 0부터 시작합니다. 
 
 We can get an element by its number in square brackets:
-각괄호 안에 요소의 순서를 넣어 요소의 값을 얻을 수 있습니다.
+각괄호 안에 요소의 순서를 넣어 요소의 값을 얻을 수 있습니다. 
 
 ```js run
 let fruits = ["Apple", "Orange", "Plum"];
@@ -79,10 +79,10 @@ alert( fruits ); // Apple,Orange,Plum
 ```
 
 An array can store elements of any type.
-하나의 배열에 어떤 종류의 요소라도 저장할 수 있습니다.
+하나의 배열에 모든 종류의 요소를 저장할 수 있습니다.
 
 For instance:
-예를 들면 아래와 같습니다:
+예를 들면 아래와 같습니다. 
 
 ```js run no-beautify
 // mix of values
@@ -98,7 +98,7 @@ arr[3](); // hello
 
 ````smart header="Trailing comma"
 An array, just like an object, may end with a comma:
-배열은 객체와 마찬가지로 마지막 요소 끝에 콤마를 붙여줄 수 있습니다.   
+객체와 마찬가지로 배열에서도 마지막 요소 끝에 콤마를 붙여줄 수 있습니다.   
 ```js 
 let fruits = [
   "Apple", 
@@ -108,14 +108,14 @@ let fruits = [
 ```
 
 The "trailing comma" style makes it easier to insert/remove items, because all lines become alike.
-트레일링 콤마 스타일은 가시성을 높여 아이템 추가 혹은 삭제를 더욱 편리하게 해줍니다. 
+트레일링 콤마를 사용하면 모든 라인이 통일성있게 보여 가시성이 좋아집니다. 따라서 요소의 삽입 및 삭제가 편리해집니다.  
 ````
 
 
-## Methods pop/push, shift/unshift
+## 메서드 pop/push, shift/unshift
 
 A [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) is one of most common uses of an array. In computer science, this means an ordered collection of elements which supports two operations:
-[큐](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))는 배열의 가장 흔한 쓰임새 중 하나입니다. 컴퓨터 과학에서 큐는 다음과 같은 두 개의 동작이 가능한 순서가 있는 요소들의 컬렉션입니다. 
+[큐](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))는 배열의 가장 흔한 활용 중 하나입니다. 컴퓨터 과학에서 큐는 다음과 같은 두 개의 동작이 가능한, 순서가 있는 요소들의 컬렉션입니다. 
 
 - `push` appends an element to the end.
 - `push` 끝에 요소를 추가합니다.
