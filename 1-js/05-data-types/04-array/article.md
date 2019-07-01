@@ -115,7 +115,7 @@ The "trailing comma" style makes it easier to insert/remove items, because all l
 ## 메서드 pop/push, shift/unshift
 
 A [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) is one of most common uses of an array. In computer science, this means an ordered collection of elements which supports two operations:
-[큐](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))는 배열의 가장 흔한 활용 중 하나입니다. 컴퓨터 과학에서 큐는 다음과 같은 두 개의 동작이 가능한, 순서가 있는 요소들의 컬렉션입니다. 
+[큐](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))는 배열을 활용한 대표적인 예시입니다. 컴퓨터 과학에서 큐는 아래 두 개의 동작이 가능한, 순서가 있는 요소들의 모음을 뜻합니다. 
 
 - `push` appends an element to the end.
 - `push` 끝에 요소를 추가합니다.
@@ -129,10 +129,10 @@ Arrays support both operations.
 배열은 두 가지 동작이 모두 가능합니다.
 
 In practice we meet it very often. For example, a queue of messages that need to be shown on-screen.
-연습문제에서 우리는 큐를 자주 보게 될 것입니다. 예를 들어 스크린에 보여져야 할 메세지의 큐 같은 것 말입니다. 
+큐는 연습문제에 자주 등장할 겁니다. 예를 들어 화면에 보여져야 할 메세지의 큐 같은 것 말입니다. 
 
 There's another use case for arrays -- the data structure named [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)). 
-배열의 또다른 활용 예시도 있습니다. [스택](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))이라는 자료구조입니다. 
+배열의 또다른 용례는 [스택](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))이라는 자료구조입니다. 
 
 
 It supports two operations:
@@ -147,13 +147,13 @@ So new elements are added or taken always from the "end".
 즉 새로운 요소들은 항상 "끝"에 추가되며, 기존 요소들은 항상 "끝"에서 꺼내집니다.
 
 A stack is usually illustrated as a pack of cards: new cards are added to the top or taken from the top:
-스택은 보통 카드뭉치로 비유됩니다: 새로운 카드들은 위쪽에 올리고, 기존 카드들은 위에서부터 가져옵니다.
+보통 스택은 카드뭉치로 비유됩니다. 새로운 카드를 더할 때 카드뭉치 위에 올리고, 카드를 나눠줄 때 위에서부터 나눠주는 것과 비슷합니다.
 
 ![](stack.png)
 
 For stacks, the latest pushed item is received first, that's also called LIFO (Last-In-First-Out) principle. For queues, we have FIFO (First-In-First-Out).
-스택에서는 가장 최근에 추가된 요소를 먼저 받습니다. 이는 LIFO (후입선출, Last-In-First-Out)라고도 합니다. 
-큐의 경우는 FIFO(선입선출, First-In-First-Out)이라고 합니다. 
+스택에서는 가장 최근에 추가된 요소를 먼저 받습니다. 이를 LIFO (후입선출, Last-In-First-Out)라고도 합니다. 
+큐의 경우는 FIFO(선입선출, First-In-First-Out)라고 합니다. 
 
 Arrays in JavaScript can work both as a queue and as a stack. They allow you to add/remove elements both to/from the beginning or the end. 
 자바스크립트의 배열은 스택으로도, 큐로도 작동할 수 있습니다. 가장 처음 혹은 맨 끝에서 요소를 추가/삭제하는 것이 가능하기 때문입니다. 
@@ -162,7 +162,7 @@ In computer science the data structure that allows it is called [deque](https://
 컴퓨터 과학에서 그러한 동작이 가능한 자료구조를 [deque](https://en.wikipedia.org/wiki/Double-ended_queue)라고 합니다. 
 
 **Methods that work with the end of the array:**
-**배열의 끝에서 동작하는 메소드들**
+**배열의 끝에서 동작하는 메서드들**
 
 `pop`
 : Extracts the last element of the array and returns it:
@@ -192,7 +192,7 @@ In computer science the data structure that allows it is called [deque](https://
     `fruits.push(...)`와 `fruits[fruits.length] = ...`의 결과는 동일합니다.
 
 **Methods that work with the beginning of the array:**
-**배열의 시작 부분에서 작동하는 메소드들**
+**배열의 시작 부분에서 작동하는 메서드들**
 
 `shift`
 : Extracts the first element of the array and returns it:
@@ -219,7 +219,7 @@ In computer science the data structure that allows it is called [deque](https://
     ```
 
 Methods `push` and `unshift` can add multiple elements at once:
-`push`와 `unshift` 메소드는 여러 개의 요소를 한번에 더할 수 있습니다:
+`push`와 `unshift` 메서드는 여러 개의 요소를 한번에 더할 수 있습니다:
 
 ```js run
 let fruits = ["Apple"];
@@ -238,10 +238,10 @@ An array is a special kind of object. The square brackets used to access a prope
 배열은 특별한 종류의 객체입니다. 요소값에 접근하기 위한 각괄호는 객체 문법에서 유래한 것입니다. 숫자가 key로 사용되지요. 
 
 They extend objects providing special methods to work with ordered collections of data and also the `length` property. But at the core it's still an object.
-순서가 있는 데이터 컬렉션을 다루기 위한 특별한 메소드들과 `lenght` 프로퍼티를 사용할 수 있지만, 본질적으로 배열은 객체입니다. 
+순서가 있는 데이터 모음을 다루기 위한 특별한 메서드들과 `length` 프로퍼티를 사용할 수 있기는 하지만, 본질적으로 배열은 객체입니다. 
 
 Remember, there are only 7 basic types in JavaScript. Array is an object and thus behaves like an object. 
-자바스크립트에는 7개의 기본 타입이 있다는 것을 기억하세요. 배열은 객체이며 따라서 객체처럼 행동합니다. 
+자바스크립트에는 7개의 기본 타입이 있다는 걸 명심하세요. 배열은 객체이며 따라서 객체처럼 행동합니다. 
 
 For instance, it is copied by reference:
 예를 들어, 배열은 by reference로 복사됩니다:
@@ -259,21 +259,24 @@ alert( fruits ); // Banana, Pear - 이제 요소가 2개입니다.
 ```
 
 ...But what makes arrays really  special is their internal representation. The engine tries to store its elements in the contiguous memory area, one after another, just as depicted on the illustrations in this chapter, and there are other optimizations as well, to make arrays work really fast.
-...하지만 배열을 정말 특별하게 만드는 것은 인터널 표현입니다.(?)  이 챕터의 그림들에서 배열의 요소들이 순차적으로 나열된 모습으로 묘사되었듯이, 엔진은 배열의 요소들을 메모리 상에 연속적으로 저장하려고 시도합니다. 물론 배열이 매우 빨리 작동하게끔 하는 다른 최적화들도 있습니다.
+...하지만 배열의 가장 큰 특징은 내부에서의 표현 방식입니다. 이 챕터에 나오는 그림들에서 배열의 요소들이 순차적으로 나열된 모습으로 묘사되었듯이, 엔진은 배열의 요소들을 메모리 상에 연속적으로 저장하려고 시도합니다. 물론 배열이 아주 빠르게 작동하도록 하는 다른 최적화들도 있습니다.
 
 But they all break if we quit working with an array as with an "ordered collection" and start working with it as if it were a regular object.
+하지만 배열을 "순서가 있는 모음"으로 사용하지 않는다면 그런 최적화들은 멈춥니다. 대신 배열이 마치 평범한 객체인 것처럼 다룹니다. 
 
 For instance, technically we can do this:
+예를 들어, 엄밀히 말하자면 아래의 코드처럼 배열을 다룰 수 있습니다. 
 
 ```js
-let fruits = []; // make an array
+let fruits = []; // make an array 배열을 만듭니다. 
 
-fruits[99999] = 5; // assign a property with the index far greater than its length
+fruits[99999] = 5; // 해당 배열의 길이보다 훨씬 더 큰 값의 인덱스에다 프로퍼티를 할당합니다.assign a property with the index far greater than its length
 
-fruits.age = 25; // create a property with an arbitrary name
+fruits.age = 25; // 임의의 변수에 프로퍼티를 할당합니다. create a property with an arbitrary name
 ```
 
 That's possible, because arrays are objects at their base. We can add any properties to them.
+이런 동작이 가능한 이유는 배열이 근본적으로 객체이기 때문입니다. 배열에다 어떤 프로퍼티도 할당할 수 있습니다. 
 
 But the engine will see that we're working with the array as with a regular object. Array-specific optimizations are not suited for such cases and will be turned off, their benefits disappear.
 
